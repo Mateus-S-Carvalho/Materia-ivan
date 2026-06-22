@@ -48,10 +48,11 @@ df_notas.drop(resposta.index, inplace=True)
 print(df_notas)
 
 #5 Filtragem Simples
+print('-'*100)
 
 condicao2 = df_notas["Nota"] > 7
 
-resposta = df_notas.loc[condicao1]
+resposta = df_notas.loc[condicao2]
 print(resposta)
 
 #6 Agrupamento 
@@ -60,6 +61,8 @@ print(resposta)
 
 #7 Projeção de colunas
 print(df_notas.loc[:, ["Nome", "Nota"]])
+
+print('-'*100)
 
 #8 Filtragem por texto
 condicao1 = df_notas['Atividade'] == "Prova Final"
@@ -82,4 +85,4 @@ nova_planilha = pandas.merge(df_notas, df_atividades, on="Atividade", how="inner
 print(nova_planilha)
 
 #12 Exportação de Dados
-df_notas.to_excel("aula12\\PlanilhaNova.xlsx", index=False)
+df_notas.to_excel("PlanilhaNova.xlsx", index=False)
